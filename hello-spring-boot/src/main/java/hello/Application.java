@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+import java.util.Date;
 
 @SpringBootApplication
 @RestController
@@ -24,7 +25,7 @@ public class Application {
 	public String home() {
 		
 		String myproperty  = env.getProperty("myenv");
-		
+		System.out.println(" Got request at"+ new Date());
 		return "Hello Openshift java demo \n ....POD IP is: " + getPodIP() + "  \n Version: 1.0 from:  "+ myproperty ;
 	}
 
